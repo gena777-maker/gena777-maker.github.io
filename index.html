@@ -5,52 +5,171 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ссылки на ботов</title>
     <style>
+        :root {
+            --primary: #6e48aa;
+            --secondary: #9d50bb;
+            --accent: #4776E6;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: 650px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
-            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--dark);
+            line-height: 1.6;
         }
+        
         h1 {
             text-align: center;
-            color: #000;
-            margin-bottom: 20px;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 10px;
         }
-        p {
-            margin: 10px 0;
-            line-height: 1.5;
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
         }
+        
+        .link-card {
+            background: white;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
         .link {
-            color: #0066cc;
+            color: var(--accent);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.2s;
         }
+        
         .link:hover {
-            text-decoration: underline;
+            color: var(--primary);
+        }
+        
+        .link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .link:hover::after {
+            width: 100%;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .status.doing {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .link-card {
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Ссылки на ботов</h1>
-
-    <p>НАШ КАНАЛ - Делаем, резерв - Делаем</p>
-
-    <p>НАШ ЧАТ - Делаем</p>
-
-    <p>💎SUNWAY - Делаем</p>
-
-    <p>🦠VirUs - Делаем</p>
-
-    <p>♦ANUKRA♣ - Делаем</p>
-
-    <p>👤Актуальной хранитель ссылки на актуальный телеграф - Делаем</p>
-
-    <p>💎Актуальные задания для получения халявы - <a href="https://telegra.ph/Zadaniya-08-06-2" class="link">ЖМИ</a></p>
-
-    <p>❗️ Сохрани эту ссылку. Тут будут ссылки на ботов, в случае блокировки.</p>
-
-    <p>🤝Если вы нашли какие-то баги или у вас есть предложение по поводу рекламы, сотрудничества, предложки контента или новых функций, для реализации их в бота, то можете написать об этом в чат или на прямую админу. Мы всегда будем рады вашему мнению.</p>
+    <h1>🔗 Ссылки на ботов</h1>
+    
+    <div class="link-card">
+        <p><span class="emoji">📢</span> НАШ КАНАЛ - <span class="status doing">Делаем</span>, резерв - <span class="status doing">Делаем</span></p>
+    </div>
+    
+    <div class="link-card">
+        <p><span class="emoji">💬</span> НАШ ЧАТ - <span class="status doing">Делаем</span></p>
+    </div>
+    
+    <div class="link-card">
+        <p><span class="emoji">💎</span> SUNWAY - <span class="status doing">Делаем</span></p>
+    </div>
+    
+    <div class="link-card">
+        <p><span class="emoji">🦠</span> VirUs - <span class="status doing">Делаем</span></p>
+    </div>
+    
+    <div class="link-card">
+        <p><span class="emoji">♦♣</span> ANUKRA - <span class="status doing">Делаем</span></p>
+    </div>
+    
+    <div class="link-card">
+        <p><span class="emoji">👤</span> Актуальной хранитель ссылки на актуальный телеграф - <span class="status doing">Делаем</span></p>
+    </div>
+    
+    <div class="link-card">
+        <p><span class="emoji">💎</span> Актуальные задания для получения халявы - <a href="https://telegra.ph/Zadaniya-08-06-2" class="link">ЖМИ</a></p>
+    </div>
+    
+    <div class="link-card" style="background-color: #fff8e1; border-left-color: #ffc107;">
+        <p><span class="emoji">❗️</span> Сохрани эту ссылку. Тут будут ссылки на ботов, в случае блокировки.</p>
+    </div>
+    
+    <div class="link-card" style="background-color: #e8f5e9; border-left-color: #4caf50;">
+        <p><span class="emoji">🤝</span> Если вы нашли какие-то баги или у вас есть предложение по поводу рекламы, сотрудничества, предложки контента или новых функций, для реализации их в бота, то можете написать об этом в чат или на прямую админу. Мы всегда будем рады вашему мнению.</p>
+    </div>
+    
+    <div class="footer">
+        © 2023 ANUKRA & SUNWAY Projects
+    </div>
 </body>
 </html>
