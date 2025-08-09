@@ -6,165 +6,144 @@
     <title>Ссылки на ботов</title>
     <style>
         :root {
-            --primary: #6e48aa;
-            --secondary: #9d50bb;
-            --accent: #4776E6;
-            --dark: #1a1a2e;
-            --light: #f8f9fa;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+            --accent: #0984e3;
+            --border: #dfe6e9;
+            --card-bg: #ffffff;
         }
         
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             max-width: 650px;
             margin: 0 auto;
             padding: 20px;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
         }
         
         h1 {
             text-align: center;
-            color: var(--primary);
+            color: var(--dark);
             margin-bottom: 30px;
-            font-size: 2.2rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 3px;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         .link-card {
-            background: white;
-            border-radius: 12px;
+            background: var(--card-bg);
+            border-radius: 8px;
             padding: 18px 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--primary);
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
         
         .link-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         
         .link {
             color: var(--accent);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             position: relative;
-            transition: all 0.2s;
         }
         
         .link:hover {
-            color: var(--primary);
-        }
-        
-        .link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-        
-        .link:hover::after {
-            width: 100%;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
         }
         
         .emoji {
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-right: 8px;
             vertical-align: middle;
         }
         
         .status {
             display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            background-color: #e3f2fd;
-            color: #1976d2;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 500;
+            background-color: #f1f2f6;
+            color: #57606f;
+            border: 1px solid #dfe6e9;
         }
         
-        .status.doing {
-            background-color: #fff8e1;
-            color: #ff8f00;
+        .divider {
+            height: 1px;
+            background-color: var(--border);
+            margin: 25px 0;
+            opacity: 0.5;
         }
         
         .footer {
             text-align: center;
             margin-top: 40px;
-            color: #666;
-            font-size: 0.9em;
+            color: #7f8c8d;
+            font-size: 0.85em;
         }
         
-        @media (max-width: 600px) {
-            body {
-                padding: 15px;
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --dark: #f5f6fa;
+                --light: #2d3436;
+                --border: #3c4043;
+                --card-bg: #2d3436;
             }
             
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .link-card {
-                padding: 15px;
+            .status {
+                background-color: #3c4043;
+                color: #dfe6e9;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>🔗 Ссылки на ботов</h1>
     
     <div class="link-card">
-        <p><span class="emoji">📢</span> НАШ КАНАЛ - <span class="status doing">Делаем</span>, резерв - <span class="status doing">Делаем</span></p>
+        <p><span class="emoji">📢</span> НАШ КАНАЛ — <span class="status">Делаем</span>, резерв — <span class="status">Делаем</span></p>
     </div>
     
     <div class="link-card">
-        <p><span class="emoji">💬</span> НАШ ЧАТ - <span class="status doing">Делаем</span></p>
+        <p><span class="emoji">💬</span> НАШ ЧАТ — <span class="status">Делаем</span></p>
     </div>
     
     <div class="link-card">
-        <p><span class="emoji">💎</span> SUNWAY - <span class="status doing">Делаем</span></p>
+        <p><span class="emoji">💎</span> SUNWAY — <span class="status">Делаем</span></p>
     </div>
     
     <div class="link-card">
-        <p><span class="emoji">🦠</span> VirUs - <span class="status doing">Делаем</span></p>
+        <p><span class="emoji">🦠</span> VirUs — <span class="status">Делаем</span></p>
     </div>
     
     <div class="link-card">
-        <p><span class="emoji">♦♣</span> ANUKRA - <span class="status doing">Делаем</span></p>
+        <p><span class="emoji">♦♣</span> ANUKRA — <span class="status">Делаем</span></p>
     </div>
     
     <div class="link-card">
-        <p><span class="emoji">👤</span> Актуальной хранитель ссылки на актуальный телеграф - <span class="status doing">Делаем</span></p>
+        <p><span class="emoji">👤</span> Актуальной хранитель ссылки на актуальный телеграф — <span class="status">Делаем</span></p>
     </div>
     
     <div class="link-card">
-        <p><span class="emoji">💎</span> Актуальные задания для получения халявы - <a href="https://telegra.ph/Zadaniya-08-06-2" class="link">ЖМИ</a></p>
+        <p><span class="emoji">💎</span> Актуальные задания для получения халявы — <a href="https://telegra.ph/Zadaniya-08-06-2" class="link">ЖМИ</a></p>
     </div>
     
-    <div class="link-card" style="background-color: #fff8e1; border-left-color: #ffc107;">
+    <div class="divider"></div>
+    
+    <div class="link-card">
         <p><span class="emoji">❗️</span> Сохрани эту ссылку. Тут будут ссылки на ботов, в случае блокировки.</p>
     </div>
     
-    <div class="link-card" style="background-color: #e8f5e9; border-left-color: #4caf50;">
+    <div class="link-card">
         <p><span class="emoji">🤝</span> Если вы нашли какие-то баги или у вас есть предложение по поводу рекламы, сотрудничества, предложки контента или новых функций, для реализации их в бота, то можете написать об этом в чат или на прямую админу. Мы всегда будем рады вашему мнению.</p>
     </div>
     
